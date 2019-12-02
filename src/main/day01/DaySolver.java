@@ -14,7 +14,7 @@ public class DaySolver extends AbstractSolver {
 
     @Override
     public void solvePart1() {
-        List<Integer> input = AoCFileReader.readIntegerLineVertical(new File(this.inputFile1));
+        List<Integer> input = AoCFileReader.readIntegerLineByLine(new File(this.inputFile1));
         int res = 0;
         for (int i : input) {
             res += calcFuelFor(i);
@@ -24,7 +24,7 @@ public class DaySolver extends AbstractSolver {
 
     @Override
     public void solvePart2() {
-        List<Integer> input = AoCFileReader.readIntegerLineVertical(new File(this.inputFile2));
+        List<Integer> input = AoCFileReader.readIntegerLineByLine(new File(this.inputFile2));
         int res = 0;
         for (int i : input) {
             res += calcAllFuelFor(i);

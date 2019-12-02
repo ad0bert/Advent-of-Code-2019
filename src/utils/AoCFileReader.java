@@ -11,12 +11,27 @@ import java.util.List;
 import java.util.Map;
 
 public class AoCFileReader {
-    public static List<Integer> readIntegerLineVertical(File f) {
+    public static List<Integer> readIntegerLineByLine(File f) {
         List<Integer> res = new ArrayList<Integer>();
         try (BufferedReader br = new BufferedReader(new FileReader(f))) {
             String line;
             while ((line = br.readLine()) != null) {
                 res.add(Integer.parseInt(line));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
+
+    public static List<Integer> readIntegerLine(File f) {
+        List<Integer> res = new ArrayList<Integer>();
+        try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+            String[] line = br.readLine().split(",");
+            for (String i : line) {
+                res.add(Integer.parseInt(i));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
