@@ -1,14 +1,14 @@
 package utils;
 
+import main.day03.Day3Instruction;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class AoCFileReader {
     public static List<Integer> readIntegerLineByLine(File f) {
@@ -52,6 +52,19 @@ public class AoCFileReader {
                 }
                 res.add(charLine);
             }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
+
+    public static List<List<Day3Instruction>> readDay3Instructions(File f) {
+        List<List<Day3Instruction>> res = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+            res.add(new ArrayList<>(Arrays.stream(br.readLine().split(",")).map(Day3Instruction::new).collect(Collectors.toList())));
+            res.add(new ArrayList<>(Arrays.stream(br.readLine().split(",")).map(Day3Instruction::new).collect(Collectors.toList())));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
