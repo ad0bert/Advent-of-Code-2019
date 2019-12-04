@@ -14,8 +14,6 @@ public class DaySolver extends AbstractSolver {
         super(day);
     }
 
-    private Map<Point, Boolean> movement2 = new HashMap<>();
-
     @Override
     public void solvePart1() {
         List<List<Day3Instruction>> input = AoCFileReader.readDay3Instructions(new File(this.inputFile1));
