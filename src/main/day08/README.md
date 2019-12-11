@@ -27,7 +27,8 @@ To make sure the image wasn't corrupted during transmission, the Elves would lik
 
 Your puzzle answer was 1862.
 
-**--- Part Two ---`**
+**--- Part Two ---**
+
 Now you're ready to decode the image. The image is rendered by stacking the layers and aligning the pixels with the same positions in each layer. The digits indicate the color of the corresponding pixel: 0 is black, 1 is white, and 2 is transparent.
 
 The layers are rendered with the first layer in front and the last layer in back. So, if a given position has a transparent pixel in the first and second layers, a black pixel in the third layer, and a white pixel in the fourth layer, the final image would have a black pixel at that position.
