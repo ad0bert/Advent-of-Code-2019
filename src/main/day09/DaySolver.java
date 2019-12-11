@@ -5,6 +5,7 @@ import java.util.List;
 
 import main.AbstractSolver;
 import utils.AoCFileReader;
+import utils.IntCode;
 
 public class DaySolver extends AbstractSolver {
 
@@ -14,14 +15,16 @@ public class DaySolver extends AbstractSolver {
 
     @Override
     public void solvePart1() {
-        List<List<String>> input = AoCFileReader.readListOfCharList(new File(this.inputFile1));
-        System.out.println();
+        List<Integer> input = AoCFileReader.readIntegerLine(new File(this.inputFile1));
+        IntCode program = new IntCode(input);
+        System.out.println(program.runFor9(1).get(0));
     }
 
     @Override
     public void solvePart2() {
-        List<List<String>> input = AoCFileReader.readListOfCharList(new File(this.inputFile2));
-        System.out.println();
+        List<Integer> input = AoCFileReader.readIntegerLine(new File(this.inputFile2));
+        IntCode program = new IntCode(input);
+        System.out.println(program.runFor9(2).get(0));
     }
 
 }
