@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a171a49-77a5-4762-ae3f-769682715054" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/day11/Drawer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/day11/input1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/day11/input1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/day11/input2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/day11/input2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/day11/DaySolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/day11/DaySolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/AoCFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/AoCFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/IntCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/IntCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/day11/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,15 +13,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/day10/input2.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="34" selection-end-line="33" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/day10/DaySolver.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,8 +46,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/day11/DaySolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+            <state relative-caret-position="139">
+              <caret line="80" column="27" lean-forward="true" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/day11/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -109,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/IntCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="255" selection-start-line="255" selection-end-line="255" />
+            <state relative-caret-position="140">
+              <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#620#621#0" expanded="true" />
@@ -203,9 +198,9 @@
         <option value="$PROJECT_DIR$/resources/day11/input1.txt" />
         <option value="$PROJECT_DIR$/resources/day11/input2.txt" />
         <option value="$PROJECT_DIR$/src/utils/AoCFileReader.java" />
-        <option value="$PROJECT_DIR$/src/main/day11/DaySolver.java" />
         <option value="$PROJECT_DIR$/src/main/day11/Drawer.java" />
         <option value="$PROJECT_DIR$/src/utils/IntCode.java" />
+        <option value="$PROJECT_DIR$/src/main/day11/DaySolver.java" />
       </list>
     </option>
   </component>
@@ -305,16 +300,16 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576431773556" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576431915896" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ad0bert\workspace\AoC2019\src\main\day11" />
       <recent name="C:\Users\ad0bert\workspace\AoC2019\src\main\day10" />
       <recent name="C:\Users\ad0bert\workspace\AoC2019\src\main\day09" />
       <recent name="C:\Users\ad0bert\workspace\AoC2019\src\main\day08" />
       <recent name="C:\Users\ad0bert\workspace\AoC2019\src\main\day07" />
-      <recent name="C:\Users\ad0bert\workspace\AoC2019\src\main\day06" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -367,7 +362,7 @@
     <frame x="1139" y="21" width="1400" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2835821" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2835821" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -376,8 +371,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29411766" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39907727" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29411766" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39907727" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -414,16 +409,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/day02/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="323">
-            <caret line="19" selection-start-line="19" selection-end-line="19" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/day03/input1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -822,22 +807,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/day11/DaySolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/IntCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="255" selection-start-line="255" selection-end-line="255" />
+        <state relative-caret-position="140">
+          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#620#621#0" expanded="true" />
             <element signature="e#675#676#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/day11/DaySolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="80" column="27" lean-forward="true" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/day11/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
