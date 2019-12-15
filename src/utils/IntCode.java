@@ -20,9 +20,18 @@ public class IntCode {
     private int relBase = 0;
 
     private List<Integer> program;
+    private List<Long> input;
+
+    public IntCode() {}
 
     public IntCode(List<Integer> program) {
         this.program = new ArrayList<>(program);
+    }
+
+    public void initLong(List<Long> input) {
+        this.input = new ArrayList<>(input);
+        int additionalMemory = 9999999;
+        while (additionalMemory-- > 0) this.input.add(0L);
     }
 
     public int run(int[] args) {
@@ -234,5 +243,78 @@ public class IntCode {
 
         }
         return outputBuffer;
+    }
+
+    public Long runFor10(long arg) {
+        long instructionCnt;
+
+        int[] instruction;
+        for (int i = ip; i < input.size(); i += instructionCnt) {
+            instruction = String.format("%05d", input.get(i)).chars().map(c -> c - '0').toArray();
+            int op = Integer.parseInt(String.valueOf(instruction[3]) + String.valueOf(instruction[4]));
+            if (ADD.equals(op)) {
+                Long val1 = instruction[2] == 0 ? input.get(input.get(i + 1).intValue()) : instruction[2] == 1 ? input.get(i + 1) : input.get(this.relBase + input.get(i + 1).intValue());
+                Long val2 = instruction[1] == 0 ? input.get(input.get(i + 2).intValue()) : instruction[1] == 1 ? input.get(i + 2) : input.get(this.relBase + input.get(i + 2).intValue());
+                Long val3 = instruction[0] == 0 ? input.get(i + 3).intValue() : this.relBase + input.get(i + 3);
+                input.set(val3.intValue(), val1 + val2);
+                instructionCnt = 4;
+            } else if (MUL.equals(op)) {
+                Long val1 = instruction[2] == 0 ? input.get(input.get(i + 1).intValue()) : instruction[2] == 1 ? input.get(i + 1) : input.get(this.relBase + input.get(i + 1).intValue());
+                Long val2 = instruction[1] == 0 ? input.get(input.get(i + 2).intValue()) : instruction[1] == 1 ? input.get(i + 2) : input.get(this.relBase + input.get(i + 2).intValue());
+                Long val3 = instruction[0] == 0 ? input.get(i + 3).intValue() : this.relBase + input.get(i + 3);
+                input.set(val3.intValue(), val1 * val2);
+                instructionCnt = 4;
+            } else if (READ.equals(op)) {
+                Long val1 = instruction[2] == 0 ? input.get(i + 1).intValue() : this.relBase + input.get(i + 1);
+                input.set(val1.intValue(), arg);
+                instructionCnt = 2;
+            } else if (WRITE.equals(op)) {
+                long res = (instruction[2] == 0 ? input.get(input.get(i + 1).intValue()) : instruction[2] == 1 ? input.get(i + 1) : input.get(this.relBase + input.get(i + 1).intValue()));
+                ip = i + 2;
+                return res;
+            } else if (JIT.equals(op)) {
+                Long val1 = instruction[2] == 0 ? input.get(input.get(i + 1).intValue()) : instruction[2] == 1 ? input.get(i + 1) : input.get(this.relBase + input.get(i + 1).intValue());
+                Long val2 = instruction[1] == 0 ? input.get(input.get(i + 2).intValue()) : instruction[1] == 1 ? input.get(i + 2) : input.get(this.relBase + input.get(i + 2).intValue());
+                if (val1 != 0) {
+                    i = val2.intValue();
+                    instructionCnt = 0;
+                } else {
+                    instructionCnt = 3;
+                }
+            } else if (JIF.equals(op)) {
+                Long val1 = instruction[2] == 0 ? input.get(input.get(i + 1).intValue()) : instruction[2] == 1 ? input.get(i + 1) : input.get(this.relBase + input.get(i + 1).intValue());
+                Long val2 = instruction[1] == 0 ? input.get(input.get(i + 2).intValue()) : instruction[1] == 1 ? input.get(i + 2) : input.get(this.relBase + input.get(i + 2).intValue());
+                if (val1 == 0) {
+                    i = val2.intValue();
+                    instructionCnt = 0;
+                } else {
+                    instructionCnt = 3;
+                }
+            } else if (LT.equals(op)) {
+                Long val1 = instruction[2] == 0 ? input.get(input.get(i + 1).intValue()) : instruction[2] == 1 ? input.get(i + 1) : input.get(this.relBase + input.get(i + 1).intValue());
+                Long val2 = instruction[1] == 0 ? input.get(input.get(i + 2).intValue()) : instruction[1] == 1 ? input.get(i + 2) : input.get(this.relBase + input.get(i + 2).intValue());
+                Long val3 = instruction[0] == 0 ? input.get(i + 3).intValue() : this.relBase + input.get(i + 3);
+                input.set(val3.intValue(), val1 < val2 ? 1L : 0L);
+                instructionCnt = 4;
+            } else if (EQ.equals(op)) {
+                Long val1 = instruction[2] == 0 ? input.get(input.get(i + 1).intValue()) : instruction[2] == 1 ? input.get(i + 1) : input.get(this.relBase + input.get(i + 1).intValue());
+                Long val2 = instruction[1] == 0 ? input.get(input.get(i + 2).intValue()) : instruction[1] == 1 ? input.get(i + 2) : input.get(this.relBase + input.get(i + 2).intValue());
+                Long val3 = instruction[0] == 0 ? input.get(i + 3).intValue() : this.relBase + input.get(i + 3);
+                input.set(val3.intValue(), val1.equals(val2) ? 1L : 0L);
+                instructionCnt = 4;
+            } else if (REL.equals(op)) {
+                Long val1 = instruction[2] == 0 ? input.get(input.get(i + 1).intValue()) : instruction[2] == 1 ? input.get(i + 1) : input.get(this.relBase + input.get(i + 1).intValue());
+                this.relBase += val1;
+                instructionCnt = 2;
+            } else if (HALT.equals(op)) {
+                break;
+            } else {
+                System.out.println("BEEP");
+                break;
+            }
+
+        }
+        running = false;
+        return -1L;
     }
 }

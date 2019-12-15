@@ -41,6 +41,22 @@ public class AoCFileReader {
         return res;
     }
 
+    public static List<Long> readLongLine(File f) {
+        List<Long> res = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+            String[] line = br.readLine().split(",");
+            for (String i : line) {
+                res.add(Long.parseLong(i));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
+
+
     public static List<List<String>> readListOfCharList(File f) {
         List<List<String>> res = new ArrayList<List<String>>();
         try (BufferedReader br = new BufferedReader(new FileReader(f))) {
